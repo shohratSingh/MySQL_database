@@ -1,5 +1,6 @@
 create database college;
 use college;
+SET SQL_SAFE_UPDATES = 0; 
 
 show tables;
 
@@ -86,6 +87,63 @@ truncate table BBA_student;
 
 select * from BBA_student;
 
+alter table BBA_student
+add transport varchar(5) default null;
+
+UPDATE BBA_student
+SET transport = 
+    CASE 
+        WHEN id in (102, 103, 107, 114, 119, 125, 126, 127, 128, 135, 136, 145, 147) THEN "Yes"
+	END;
+    
+alter table BBA_student
+add route_no int(2) default null;
+
+UPDATE BBA_student
+SET route_no = 
+CASE
+    WHEN id = 102 THEN 2
+    WHEN id = 103 THEN 3 
+    WHEN id = 107 THEN 3
+    WHEN id = 114 THEN 2
+    WHEN id = 119 THEN 6
+    WHEN id = 125 THEN 7
+    WHEN id = 126 THEN 9
+    WHEN id = 127 THEN 9
+    WHEN id = 128 THEN 9
+    WHEN id = 135 THEN 3
+    WHEN id = 136 THEN 7
+    WHEN id = 145 THEN 7
+    WHEN id = 147 THEN 8
+    ELSE NULL
+END;
+
+alter table BBA_student
+add hostel varchar(5) default null;
+
+UPDATE BBA_student
+SET hostel = 
+CASE
+    WHEN id = 101 THEN "Yes"
+    WHEN id = 105 THEN "Yes" 
+    WHEN id = 106 THEN "Yes"
+    WHEN id = 111 THEN "Yes"
+    WHEN id = 124 THEN "Yes"
+    WHEN id = 130 THEN "Yes"
+    WHEN id = 133 THEN "Yes"
+    WHEN id = 134 THEN "Yes"
+    WHEN id = 141 THEN "Yes"
+    WHEN id = 143 THEN "Yes"
+    WHEN id = 150 THEN "Yes"
+    WHEN id = 152 THEN "Yes"
+    WHEN id = 155 THEN "Yes"
+    WHEN id = 157 THEN "Yes"
+	ELSE NULL
+END;
+        
+select * from BBA_student;
+
+
 -----------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
 
@@ -171,3 +229,65 @@ VALUES
 select * from BEd_student;
 
 truncate table BEd_student;
+
+alter table BEd_student
+add transport varchar(5) default null;
+
+UPDATE BEd_student
+SET transport = 
+    CASE 
+        WHEN id in (102, 104, 106, 107, 110, 111, 126, 127, 128, 135, 136, 145, 147, 155, 156, 159, 160) THEN "Yes"
+	END;
+    
+alter table BEd_student
+add route_no int(2) default null;
+
+UPDATE BEd_student
+SET route_no = 
+CASE
+    WHEN id = 102 THEN 5
+    WHEN id = 104 THEN 3 
+    WHEN id = 106 THEN 4
+    WHEN id = 107 THEN 5
+    WHEN id = 110 THEN 1
+    WHEN id = 111 THEN 2
+    WHEN id = 126 THEN 2
+    WHEN id = 127 THEN 1
+    WHEN id = 128 THEN 6
+    WHEN id = 135 THEN 5
+    WHEN id = 136 THEN 5
+    WHEN id = 145 THEN 7
+    WHEN id = 147 THEN 7
+    WHEN id = 155 THEN 9
+    WHEN id = 156 THEN 10
+    WHEN id = 159 THEN 10
+    WHEN id = 160 THEN 2
+    ELSE NULL
+END;
+
+alter table BEd_student
+add hostel varchar(5) default null;
+
+UPDATE BEd_student
+SET hostel = 
+CASE
+    WHEN id = 103 THEN "Yes"
+    WHEN id = 105 THEN "Yes" 
+    WHEN id = 113 THEN "Yes"
+    WHEN id = 117 THEN "Yes"
+    WHEN id = 121 THEN "Yes"
+    WHEN id = 124 THEN "Yes"
+    WHEN id = 130 THEN "Yes"
+    WHEN id = 133 THEN "Yes"
+    WHEN id = 134 THEN "Yes"
+    WHEN id = 141 THEN "Yes"
+    WHEN id = 142 THEN "Yes"
+    WHEN id = 143 THEN "Yes"
+    WHEN id = 150 THEN "Yes"
+    WHEN id = 152 THEN "Yes"
+    WHEN id = 153 THEN "Yes"
+    WHEN id = 157 THEN "Yes"
+	ELSE NULL
+END;
+        
+select * from BEd_student;
