@@ -100,10 +100,10 @@ SET route_no =
 CASE
     WHEN id in(102,114) THEN 2
     WHEN id in (103,107,135) THEN 3 
-	WHEN id in (119) THEN 6
+    WHEN id in (119) THEN 6
     WHEN id in (125,136,145) THEN 7
     WHEN id = 147 THEN 8
-	WHEN id in (126,127,128) THEN 9
+    WHEN id in (126,127,128) THEN 9
     ELSE NULL
 END;
 
@@ -218,8 +218,8 @@ CASE
     WHEN id in (110,127) THEN 1
     WHEN id in (111,126,160) THEN 2
     WHEN id = 104 THEN 3 
-	WHEN id = 106 THEN 4
-	WHEN id in (102,107,135,136) THEN 5
+    WHEN id = 106 THEN 4
+    WHEN id in (102,107,135,136) THEN 5
     WHEN id = 128 THEN 6
     WHEN id in (145,147) THEN 7
     WHEN id = 155 THEN 9
